@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA's Starry Wreath in Pegasus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>NASA's Starry Wreath in Pegasus</h1>
+        <img src="https://www.nasa.gov/wp-content/uploads/2023/03/52577236876_109214e963_o.jpg" alt="Starry Wreath in Pegasus">
+        <p>The "Starry Wreath" is a stunning astronomical feature located in the constellation Pegasus.</p>
+        <p>This region is characterized by a dense collection of stars and cosmic dust.</p>
+        <p>Observations of the Starry Wreath provide valuable insights into star formation processes.</p>
+        <p>NASA's telescopes have captured incredible details of this celestial wonder.</p>
+        <p>Understanding such regions helps astronomers learn more about the evolution of galaxies.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>What does the Starry Wreath help astronomers understand?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) Planetary systems</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) Star formation processes</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) Black holes</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) Dark matter</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'B') {
+                resultDiv.textContent = "Correct! The Starry Wreath helps astronomers understand star formation processes.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is B) Star formation processes.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
